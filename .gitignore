@@ -1,2 +1,3 @@
 spec/dummy
 Gemfile.lock
+.DS_Store
