@@ -5,9 +5,9 @@ function init_tinymce_for(jq_selector) {
     browser_spellcheck: true,
     menubar: false,
     base_url: '/assets/tinymce',
-    toolbar: "undo redo | styleselect | style-p style-h1 style-h2 style-h3 | bold italic | bullist numlist outdent indent hr | refinerylink | refineryimage | fullscreen | code",
+    toolbar: "undo redo | styleselect | style-p style-h1 style-h2 style-h3 | bold italic | bullist numlist outdent indent hr | table | refinerylink | refineryimage | fullscreen | code",
     content_css: '<%= asset_path "tinymce.scss", only_path: false %>',
-    plugins: ["image", "link", "lists", "fullscreen", "code", "stylebuttons", "refineryimage", "refinerylink", "hr"],
+    plugins: ["image", "link", "lists", "fullscreen", "code", "stylebuttons", "refineryimage", "refinerylink", "hr", "table"],
     refinery_core_backend_route: '<%= Refinery::Core.backend_route %>',
     contextmenu: "link useBrowserSpellcheck image table",
     setup: function (editor) {
