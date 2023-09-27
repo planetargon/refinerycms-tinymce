@@ -21,6 +21,11 @@ module Refinery
           tinymce/plugins/stylebuttons/*
           tinymce/plugins/refineryimage/*
           tinymce/plugins/refinerylink/*
+          tinymce/plugins/charmap/*
+          tinymce/plugins/table/*
+          tinymce/plugins/hr/*
+          tinymce/plugins/media/*
+          tinymce/plugins/nonbreaking/*
           refinery/tinymce_manifest.js
         )
       end
