@@ -5,7 +5,7 @@ function init_tinymce_for(jq_selector) {
     browser_spellcheck: true,
     menubar: false,
     base_url: '/assets/tinymce',
-    toolbar: "undo redo | styleselect | style-p style-h1 style-h2 style-h3 | bold italic | bullist numlist outdent indent hr | table charmap nonbreaking | refinerylink | refineryimage media | fullscreen | code",
+    toolbar: "undo redo | styleselect | removeformat | style-p style-h1 style-h2 style-h3 | bold italic | bullist numlist outdent indent hr | table charmap nonbreaking | refinerylink | refineryimage media | fullscreen | code | removeformat",
     content_css: '<%= asset_path "tinymce.scss", only_path: false %>',
     plugins: ["image", "link", "lists", "fullscreen", "code", "stylebuttons", "refineryimage", "refinerylink", "hr", "table", "charmap", "nonbreaking", "media"],
     refinery_core_backend_route: '<%= Refinery::Core.backend_route %>',
@@ -29,6 +29,20 @@ function init_tinymce_for(jq_selector) {
         },
       });
     },
+    formats: {
+      removeformat: [
+        {
+          selector: 'h1,h2,h3,h4,h5,h6,b,strong,em,i,font,u,strike,s,sub,sup,dfn,code,samp,kbd,var,cite,mark,q,del,ins,small',
+          remove: 'all',
+          split: true,
+          block_expand: true,
+          expand: false,
+          deep: true
+        },
+        { selector: 'span', attributes: ['style', 'class', 'dir'], remove: 'empty', split: true, expand: false, deep: true },
+        { selector: '*', attributes: ['style', 'class', 'dir'], split: false, expand: false, deep: true }
+      ]
+    }
   })
 }
 
